@@ -1,7 +1,16 @@
-import pandas as pd
-import streamlit as st
+import sys
+from pathlib import Path
+
+# Add scam-detection directory to Python path
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
 from pipeline.scam_detector.detector import ScamDetector
+
+import pandas as pd
+import streamlit as st
 
 
 # ============================================================
@@ -355,3 +364,5 @@ with dataset_tab:
                                     )
 
 ## (.venv) PS D:\RK_CodingNinja\CN_Code Assgnment\Session9 Spam Detector\scam-detector\scam-detection> python -m streamlit run streamlit/app.py
+
+## python -m streamlit run streamlit/app.py
