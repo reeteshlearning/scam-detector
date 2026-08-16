@@ -6,11 +6,11 @@ logger = get_logger(__name__)
 
 class LLMExecutor:
     """Executes prompts using the LLM client."""
-    
+  
     def __init__(self, model: Optional[str] = None) -> None:
         self.llm: LLMClient = LLMClient(model) if model else LLMClient()
         logger.info("Initialized LLMExecutor")
-    
+  
     def execute(self, prompt: str) -> str:
         logger.info(f"Executing LLM with prompt length: {len(prompt)}")
         try:

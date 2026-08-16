@@ -11,9 +11,7 @@ class ScamDetector:
 
     def __init__(self, strategy: str = "react") -> None:
         """Initializes the pipeline components."""
-        # `LLMExecutor` is dynamically typed in this project; keep the instance as `Any`
-        # so static analysis does not flag the `execute()` call below.
-        self.executor: Any = LLMExecutor()
+        self.executor = LLMExecutor()
         self.parser = OutputParser()
         self.strategy = strategy
         logger.info(f"Initialized ScamDetector with strategy: {self.strategy}")
